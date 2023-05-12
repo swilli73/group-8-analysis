@@ -14,9 +14,9 @@ CREATE TABLE "stations" (
 
 CREATE TABLE "weather" (
     "serialid" int   NOT NULL,
-    "id" varhchar   NOT NULL,
+    "id" varchar   NOT NULL,
     "date_str" date   NOT NULL,
-    "degrees_from_mean" numberic(2,2)   NOT NULL,
+    "degrees_from_mean" numeric(2,2)   NOT NULL,
     "max_temp" numeric(3,1)   NOT NULL,
     "min_temp" numeric(3,1)   NOT NULL,
     "type" varchar(100)   NOT NULL,
