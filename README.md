@@ -4,7 +4,7 @@ Python/Pandas, Jupyter Notebook, SQL, Postgres/pgAdmin4, ![QuickDBD](https://www
 
 [Data sourced from a database of U.S. temperature outliers from 1943-2013 collected from NOAA](https://data.world/carlvlewis/u-s-weather-outliers-1964)
 
-Stefan Williams, Eric Cregger, and Lucy Harris
+Stefan Williams, Eric Cregger, Lucy Harris
 
 ## Segment 1: Sketch It Out
 #### The purpose of this first segment/project deliverable is to sketch out our overall question by determining what question we wish to ask our dataset. From there, we will use the various skills in data analytics and visualization we have honed over this course to create a prototype. 
