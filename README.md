@@ -1,6 +1,6 @@
 # group-8-analysis
 ## A final group project for the UNC Chapel Hill Data Analytics and Visualization Boot Camp 
-Python/Pandas, Jupyter Notebook, SQL, Postgres/pgAdmin4, ![QuickDBD](https://www.quickdatabasediagrams.com), Tableau Public
+Python/Pandas, Jupyter Notebook, SQL, Postgres/pgAdmin4, [QuickDBD](https://www.quickdatabasediagrams.com), Tableau Public
 
 [Data sourced from a database of U.S. temperature outliers from 1943-2013 collected from NOAA](https://data.world/carlvlewis/u-s-weather-outliers-1964)
 
