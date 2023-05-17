@@ -7,9 +7,20 @@ Python/Pandas/SQLAlchemy, Jupyter Notebook, SQL, Postgres/pgAdmin4, [QuickDBD](h
 A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing GitHub, Slack, and Zoom for communication and cooperation. 
 
 ## Segment 1: Sketch It Out
+
 #### The purpose of this first segment/project deliverable is to sketch out our overall question by determining what question we wish to ask our dataset. From there, we will use the various skills in data analytics and visualization we have honed over this course to create a prototype. 
 
+#### The topic chosen for our project is based on a dataset of temperature/weather anomalies aggregated from reported records across the United States. 
+
+#### This topic was chosen because of the variety of the dataset (over 3 million records from 1964-2013, lots of different time periods and stations to filter/choose from, can focus on strong/weak anomalies, hot/cold anomalies) as well as the neutrality of weather (relatable to everyone, not very specific of a topic in practice). This allows for a variety of analyses/visualizations to be performed on the data depending on what we’re looking for.
+
+#### The dataset is sourced from Carl V. Lewis on the data.world website, the data is sourced from the National Oceanic and Atmospheric Administration, and the source dataset analysis was performed with Enigma.io calculations.
+> "Each entry represents a report from a weather station with high or low temperatures that were historical outliers within that month, averaged over time."
+
 #### This prototype will include a draft of a machine learning model to train/employ using Pandas and Jupyter Notebook. This will be connected to a database created within Postgres that holds the tables with the cleaned/organized data we will end up performing our analysis on. A dashboard created within Tableau will serve as a collection of visualizations that explores the question we have asked our data in a presentable and readable format. 
+
+#### There are many questions that can be asked about this data that go beyond machine learning. Which stations reported the most temperature outliers? Which years within a specific decade have the most amount of temperature outliers? Are there more hot or cold outliers? What are the highest/lowest degrees from mean? Where are the most outliers located (within a certain time span)? Are there more weak or strong outliers? Which specific outlier is the most common?
+
 
 ![Originaldata](https://i.gyazo.com/f8c86887f8fb4e7d4504196c7d69712e.png)
 #### When reading the original data, the relevant columns for the weather anomalies lie in how "degrees_from_mean", "max_temp", and "min_temp" relate to the "type" column. The "type" column falls under four categories of description for the outlier: "Weak Hot", "Weak Cold", "Strong Hot", and "Strong Cold". How do these factors contribute to a weather anomaly being described as one of these types and can a machine learning model accurately group and predict a classification? There doesn't seem to be a definite filter or range on how the type is labeled, which is what we wish to explore. 
