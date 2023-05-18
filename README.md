@@ -39,3 +39,37 @@ A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing
 #### The provisional machine learning model will utilize an unsupervised model format using [describe here]. The database created previously is to be connected to Jupyter Notebook using SQLAlchemy through an SQLite file, then converted into a DataFrame and explored from there. 
 
 #### The goal is to test whether our model can classify weather anomalies as either "Weak Hot", "Weak Cold", "Strong Hot", or "Strong Cold" as they are classified in the original dataset. After exploring and preprocessessing the data, the model should be able to visualize the trends and relationships of these classifications and what may contribute to them being labeled as such. 
+
+## Segment 2: Build and Assemble
+
+ Description of preliminary data 
+preprocessing 
+✓ Description of preliminary feature 
+engineering and preliminary feature 
+selection, including their decision-making 
+process 
+✓ Description of how data was split into 
+training and testing sets 
+✓ Explanation of model choice, including 
+limitations and benefits
+
+✓ Database stores static data for use 
+during the project 
+✓ Database interfaces with the project in 
+some format (e.g., scraping updates the 
+database, or database connects to the 
+model) 
+✓ Includes at least two tables (or 
+collections, if using MongoDB) 
+✓ Includes at least one join using the 
+database language (not including any 
+joins in Pandas) 
+✓ Includes at least one connection string 
+(using SQLAlchemy or PyMongo)
+Include updated ERD for the database if needed
+
+The main branch should include: ✓ All code necessary to perform 
+exploratory analysis ✓ Some code necessary to complete the 
+machine learning portion of the project 
+
+
