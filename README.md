@@ -89,6 +89,11 @@ limitations and benefits
 
 <hr>
 
+![dashdraft](https://i.gyazo.com/9e08386896b23353af1ef66a03f96aac.png)
+
+#### The draft for a final dashboard to present our findings with was drafted in Google Slides. The placement of the elements is not final, but an example of what the dashboard could look like. The plan is so use Tableau to show images from the initial data analysis/ETL, data from the machine learning model, and at least one interactive element using the program to display our findings as well. We wish to include a 3D scatter plot (like the one created earlier), but that may have to be implemented with just screenshots.
+
+#### Captions will supplement any static images, and links to the original data as well as the original dataset will be provided near the bottom. The initial idea right now is a map of North Carolina utilizing the data created during the ETL process created in this segment that will feature tooltips for the stations when clicked on. This could be a count of how many strong/weak hot/cold classifications there are in each station, their longtitude/latitude, the maximum/minimum temperatures, the highest/lowest degrees from the mean, and so on. 
 
 
 
