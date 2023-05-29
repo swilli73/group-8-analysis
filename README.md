@@ -7,9 +7,9 @@ Python/Pandas/SQLAlchemy, Jupyter Notebook, SQL, Postgres/pgAdmin4, [QuickDBD](h
 
 [Resource referenced for execution of the c.execute function](https://mungingdata.com/sqlite/create-database-load-csv-python/)
 
-[Link to Google Slides presentation for this project]
+[Link to Google Slides presentation for this project](google.com)
 
-[Tableau Dashboard for this project]
+[Tableau Dashboard for this project](google.com)
 
 A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing GitHub, Slack, and Zoom for communication and cooperation. 
 
