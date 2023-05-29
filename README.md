@@ -7,6 +7,10 @@ Python/Pandas/SQLAlchemy, Jupyter Notebook, SQL, Postgres/pgAdmin4, [QuickDBD](h
 
 [Resource referenced for execution of the c.execute function](https://mungingdata.com/sqlite/create-database-load-csv-python/)
 
+[Link to Google Slides presentation for this project]
+
+[Tableau Dashboard for this project]
+
 A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing GitHub, Slack, and Zoom for communication and cooperation. 
 
 ## Segment 1: Sketch It Out
@@ -96,5 +100,5 @@ limitations and benefits
 #### Captions will supplement any static images, and links to the original data as well as the original dataset will be provided near the bottom. The initial idea right now is a map of North Carolina utilizing the data created during the ETL process created in this segment that will feature tooltips for the stations when clicked on. This could be a count of how many strong/weak hot/cold classifications there are in each station, their longtitude/latitude, the maximum/minimum temperatures, the highest/lowest degrees from the mean, and so on. 
 
 
-
+## Segment 3: Put It All Together
 
