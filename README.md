@@ -50,33 +50,27 @@ A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing
 
 #### Now that we have a base idea for where our project is going, the next step is to implement our plans. We have decided to trim down the original database containing over 3,000,000 entries across the U.S. into just stations reporting from North Carolina, which brings the rows down to about 90,000. This keeps the data relevant to us (as NC residents), brings up a point of focus for our project, as well as drastically reduces the file size of the data which allows for quicker processing and sharing.
 
-#### An ETL process was performed on the data to load in the original dataset, process it to only include NC stations, create a SQLite database utilizing this new data, and export it. The "data" folder in this branch contains the exported files. This allows for the data to be shared beyond a Postgres database.
+#### An ETL process was performed on the data to load in the original dataset, process it to only include NC stations, create a new table utilizing this new data, and export it. The database is now hosted using AWS (Amazon Web Services). This allows for the data to be shared remotely beyond just a Postgres database.
 
-![etl1](https://i.gyazo.com/e65db4b5946d3f5199fcb7ee51285e61.png)
+![etl1](https://i.gyazo.com/db782721487594645b87a507bdbfce51.png)
 
 > Using GeoPandas, confirmation was first done to verify that all of the records were within the U.S. and its territories.
 
-![etl2](https://i.gyazo.com/a9c58154bfd18a2a263afda253d256aa.png)
+![etl2](https://i.gyazo.com/5b7e9510a371a73788a202010429f60c.png)
 
-> The data was then limited to NC by cutting down the initial USA shapefile.
+![etl3](https://i.gyazo.com/1226fb0a01d997ae42e5376cc45a628c.png)
 
-![etl3](https://i.gyazo.com/5bef40aa34f75ecf29aa99ea09e01e79.png)
+> A shapefile for the U.S. was read and plotted for a closer look, as well as the stations being plotted.
 
-> After performing a join of the station data with the NWS shapefile to pull in states for each station, a plot was created to visualize the NC stations on its map.
+![etl4](https://i.gyazo.com/d1c7462e4e18e938ced4c6a9994bcb16.png)
 
-![etl4](https://i.gyazo.com/8dc125371dfa9ccb972603f42514044e.png)
+> The data was filtered for only N.C. stations, and then saved into a new table into the database on AWS.
 
-> A new DataFrame now holds only NC stations. 
+#### Now that the data has been trimmed down, it's simple enough to load it into a new DataFrame on a new notebook to be used with the model.
 
-#### Now that the data has been trimmed down, the next step is to create the SQLite database and perform exports. 
-
-![etl5](https://i.gyazo.com/3bb3b18f0fd846e33cc7360e62d57bb4.png)
-
-> Analysis.db is the file that will be used to connect the data to the machine learning model. Using SQLAlchemy (through SQLite3), the tables of the database were created.
-
-![etl6](https://i.gyazo.com/4bb34e49e3a09fe3dc36d11cc705f154.png)
-![etl7](https://i.gyazo.com/225b7fa8f642ee1420d12ddce9af8a4e.png)
-> A "data" table was then created as a join of the data processed in the previous steps to be used for the machine learning model. Analysis.db is now able to be easily loaded into a new DataFrame.
+![etl6](https://i.gyazo.com/187513b14ec1f1f4dc9d5911e3e3f05d.png)
+![etl7](https://i.gyazo.com/e0ba8ef196e112287b57856db6378307.png)
+> Using SQLAlchemy along with the connection link to the database allows the table previously created to be loaded.
 
 
 <hr>
