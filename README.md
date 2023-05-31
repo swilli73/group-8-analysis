@@ -73,19 +73,36 @@ A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing
 > Using SQLAlchemy along with the connection link to the database allows the table previously created to be loaded.
 
 
-<hr>
+#### The data is now able to be properly loaded into the machine learning model notebook. We decided to continue with an unsupervised model utilizing the K-Means algorithm to cluster the data from the "max_temp", "min_temp", and "degrees_from_mean" columns into its own machine-generated classification to view the results.
 
-MACHINE LEARNING TBA
-✓ Description of preliminary feature 
-engineering and preliminary feature 
-selection, including their decision-making 
-process 
-✓ Description of how data was split into 
-training and testing sets 
-✓ Explanation of model choice, including 
-limitations and benefits
+![machine1](https://i.gyazo.com/f225a1c70ddc77cc11065adeede583a0.png)
 
-<hr>
+> The dataset was processed into Fahrenheit instead of Celsius for the final visualizations and plots. This has no impact on the machine learning model due to the scaling of the data, but allows for more readability in the end result.
+
+![3d1](https://i.gyazo.com/c879907502336345e916c7f95ce9c14d.png)
+
+> The data that was loaded in was then graphed into a 3D scatter plot. Given that the original plot created in the provisional model was only utilizing about 3,000 entries, it's interesting to see how this one varies in shape now that its using the whole 94,178 records for the N.C. weather data. This looks a lot more unpredictable compared to the first graph.
+
+![machine2](https://i.gyazo.com/f5d069d44fcdd5f03fe768f33428138c.png)
+
+> The DataFrame was filtered into the 3 necessary columns needed for the machine learning model, and then scaled using the scikit-learn StandardScaler() function. 
+
+![machine3](https://i.gyazo.com/1aea20caaa4918d7861f095c744c88ba.png)
+
+> PCA (Principal Component Analysis) was then performed on the scaled data into 3 components (to match the original factor columns). This essentially reduces the variables into smaller ones for use with the model. 
+
+![machine4](https://i.gyazo.com/9706fdcf9611e0c72b736ac0c4702c92.png)
+
+> We already know from the original data that we want 4 clusters, so it's easy enough to specify that when using K-Means. The data was fit for use in the model, and then the predictions of the classifications were printed and inserted into the DataFrame with the principal components. 
+
+![machine5](https://i.gyazo.com/e0f72d674e310dea5a8076d6473fa818.png)
+![machine6](https://i.gyazo.com/3c5d6495f411e3646ec54e3de0cc7aa3.png)
+
+> A 2D scatter plot only utilizing the first two PCs was created, as well as a 3D plot utilizing all three. 
+
+#### Viewing the end graphs from the machine learning model and comparing that to the first plots created using the pre-classified data is interesting. The first plot seemed to have very clear distinctions on the typing, while the later plots have much more overlap between the classes. They are still separated, in a way (with some outliers), but much more clustered together the more records there are. 
+
+#### In the original data, the classes are separated by the "degrees_from_mean" axis. However, in the clustered model, the predicted classes are mainly separated by the "PC 1" (which is created directly from scaling the "max_temp" column) axis. As degrees from mean was originally predicted to be how the types were created, it seems that a big limit of using this model is that it doesn't read that as the main factor. 
 
 ![dashdraft](https://i.gyazo.com/9e08386896b23353af1ef66a03f96aac.png)
 
