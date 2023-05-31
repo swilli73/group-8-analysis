@@ -5,6 +5,12 @@ Python/Pandas/SQLAlchemy, Jupyter Notebook, SQL, Postgres/pgAdmin4, [QuickDBD](h
 
 [Data sourced from a database of U.S. temperature outliers from 1943-2013 collected from NOAA](https://data.world/carlvlewis/u-s-weather-outliers-1964)
 
+[Resource referenced for execution of the c.execute function](https://mungingdata.com/sqlite/create-database-load-csv-python/)
+
+[Link to Google Slides presentation for this project](google.com)
+
+[Tableau Dashboard for this project](google.com)
+
 A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing GitHub, Slack, and Zoom for communication and cooperation. 
 
 ## Segment 1: Sketch It Out
@@ -42,31 +48,68 @@ A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing
 
 ## Segment 2: Build and Assemble
 
- Description of preliminary data 
-preprocessing 
-✓ Description of preliminary feature 
-engineering and preliminary feature 
-selection, including their decision-making 
-process 
-✓ Description of how data was split into 
-training and testing sets 
-✓ Explanation of model choice, including 
-limitations and benefits
+#### Now that we have a base idea for where our project is going, the next step is to implement our plans. We have decided to trim down the original database containing over 3,000,000 entries across the U.S. into just stations reporting from North Carolina, which brings the rows down to about 90,000. This keeps the data relevant to us (as NC residents), brings up a point of focus for our project, as well as drastically reduces the file size of the data which allows for quicker processing and sharing.
 
-✓ Database stores static data for use 
-during the project 
-✓ Database interfaces with the project in 
-some format (e.g., scraping updates the 
-database, or database connects to the 
-model) 
-✓ Includes at least two tables (or 
-collections, if using MongoDB) 
-✓ Includes at least one join using the 
-database language (not including any 
-joins in Pandas) 
-✓ Includes at least one connection string 
-(using SQLAlchemy or PyMongo)
-Include updated ERD for the database if needed
+#### An ETL process was performed on the data to load in the original dataset, process it to only include NC stations, create a new table utilizing this new data, and export it. The database is now hosted using AWS (Amazon Web Services). This allows for the data to be shared remotely beyond just a Postgres database.
+
+![etl1](https://i.gyazo.com/db782721487594645b87a507bdbfce51.png)
+
+> Using GeoPandas, confirmation was first done to verify that all of the records were within the U.S. and its territories.
+
+![etl2](https://i.gyazo.com/5b7e9510a371a73788a202010429f60c.png)
+
+![etl3](https://i.gyazo.com/1226fb0a01d997ae42e5376cc45a628c.png)
+
+> A shapefile for the U.S. was read and plotted for a closer look, as well as the stations being plotted.
+
+![etl4](https://i.gyazo.com/d1c7462e4e18e938ced4c6a9994bcb16.png)
+
+> The data was filtered for only N.C. stations, and then saved into a new table into the database on AWS.
+
+#### Now that the data has been trimmed down, it's simple enough to load it into a new DataFrame on a new notebook to be used with the model.
+
+![etl6](https://i.gyazo.com/187513b14ec1f1f4dc9d5911e3e3f05d.png)
+![etl7](https://i.gyazo.com/e0ba8ef196e112287b57856db6378307.png)
+> Using SQLAlchemy along with the connection link to the database allows the table previously created to be loaded.
 
 
+#### The data is now able to be properly loaded into the machine learning model notebook. We decided to continue with an unsupervised model utilizing the K-Means algorithm to cluster the data from the "max_temp", "min_temp", and "degrees_from_mean" columns into its own machine-generated classification to view the results.
+
+![machine1](https://i.gyazo.com/f225a1c70ddc77cc11065adeede583a0.png)
+
+> The dataset was processed into Fahrenheit instead of Celsius for the final visualizations and plots. This has no impact on the machine learning model due to the scaling of the data, but allows for more readability in the end result.
+
+![3d1](https://i.gyazo.com/c879907502336345e916c7f95ce9c14d.png)
+
+> The data that was loaded in was then graphed into a 3D scatter plot. Given that the original plot created in the provisional model was only utilizing about 3,000 entries, it's interesting to see how this one varies in shape now that its using the whole 94,178 records for the N.C. weather data. This looks a lot more unpredictable compared to the first graph.
+
+![machine2](https://i.gyazo.com/f5d069d44fcdd5f03fe768f33428138c.png)
+
+> The DataFrame was filtered into the 3 necessary columns needed for the machine learning model, and then scaled using the scikit-learn StandardScaler() function. 
+
+![machine3](https://i.gyazo.com/1aea20caaa4918d7861f095c744c88ba.png)
+
+> PCA (Principal Component Analysis) was then performed on the scaled data into 3 components (to match the original factor columns). This essentially reduces the variables into smaller ones for use with the model. 
+
+![machine4](https://i.gyazo.com/9706fdcf9611e0c72b736ac0c4702c92.png)
+
+> We already know from the original data that we want 4 clusters, so it's easy enough to specify that when using K-Means. The data was fit for use in the model, and then the predictions of the classifications were printed and inserted into the DataFrame with the principal components. 
+
+![machine5](https://i.gyazo.com/e0f72d674e310dea5a8076d6473fa818.png)
+![machine6](https://i.gyazo.com/3c5d6495f411e3646ec54e3de0cc7aa3.png)
+
+> A 2D scatter plot only utilizing the first two PCs was created, as well as a 3D plot utilizing all three. 
+
+#### Viewing the end graphs from the machine learning model and comparing that to the first plots created using the pre-classified data is interesting. The first plot seemed to have very clear distinctions on the typing, while the later plots have much more overlap between the classes. They are still separated, in a way (with some outliers), but much more clustered together the more records there are. 
+
+#### In the original data, the classes are separated by the "degrees_from_mean" axis. However, in the clustered model, the predicted classes are mainly separated by the "PC 1" (which is created directly from scaling the "max_temp" column) axis. As degrees from mean was originally predicted to be how the types were created, it seems that a big limit of using this model is that it doesn't read that as the main factor. 
+
+![dashdraft](https://i.gyazo.com/9e08386896b23353af1ef66a03f96aac.png)
+
+#### The draft for a final dashboard to present our findings with was drafted in Google Slides. The placement of the elements is not final, but an example of what the dashboard could look like. The plan is so use Tableau to show images from the initial data analysis/ETL, data from the machine learning model, and at least one interactive element using the program to display our findings as well. We wish to include a 3D scatter plot (like the one created earlier), but that may have to be implemented with just screenshots.
+
+#### Captions will supplement any static images, and links to the original data as well as the original dataset will be provided near the bottom. The initial idea right now is a map of North Carolina utilizing the data created during the ETL process created in this segment that will feature tooltips for the stations when clicked on. This could be a count of how many strong/weak hot/cold classifications there are in each station, their longtitude/latitude, the maximum/minimum temperatures, the highest/lowest degrees from the mean, and so on. 
+
+
+## Segment 3: Put It All Together
 
