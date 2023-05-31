@@ -79,7 +79,8 @@ A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing
 
 > The dataset was processed into Fahrenheit instead of Celsius for the final visualizations and plots. This has no impact on the machine learning model due to the scaling of the data, but allows for more readability in the end result.
 
-![3d1](https://i.gyazo.com/c879907502336345e916c7f95ce9c14d.png)
+![3d1](https://i.gyazo.com/8673b9ed69dcc88dd37191492745f444.png)
+![3d2](https://i.gyazo.com/3ffdeda10c55af71ebf83b1b53634d1a.png)
 
 > The data that was loaded in was then graphed into a 3D scatter plot. Given that the original plot created in the provisional model was only utilizing about 3,000 entries, it's interesting to see how this one varies in shape now that its using the whole 94,178 records for the N.C. weather data. This looks a lot more unpredictable compared to the first graph.
 
