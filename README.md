@@ -113,3 +113,15 @@ A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing
 
 ## Segment 3: Put It All Together
 
+#### Now that we have a working database that connects to a machine learning model, as well as a provisional dashboard to present our findings, there are just a few more steps left in this project. For our final phase, we performed a join of the new DataFrame created by the model with the original DataFrame that was loaded in. This is used to create a few 2D scatter plots to compare the weather variables to the typing of the original data, as well as the classifications the model created to view our results. After that, our project dashboard was completed and published.
+
+
+![s31](
+![s32](
+![s33](
+![s34](
+![s35](
+![s36](
+![s37](
+![s38](
+![s39](
