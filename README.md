@@ -7,8 +7,7 @@ Python/Pandas/SQLAlchemy, Jupyter Notebook, SQL, Postgres/pgAdmin4, [QuickDBD](h
 
 [Resource referenced for execution of the c.execute function](https://mungingdata.com/sqlite/create-database-load-csv-python/)
 
-[Link to Google Slides presentation for this project](https://docs.google.com/presentation/d/e/2PACX-1vQyQ8MYxGYrR0Cuo40EGW3o-OEz5RoHB24_dMWR1c5PlhU8DhinBJ1_PQ2aeBDs5VujTQTl0-KivusL/pub?start=false&loop=false&delayms=60000#slide=id.g24b96ec425d_0_25)
-
+[Link to Google Slides presentation for this project](https://docs.google.com/presentation/d/e/2PACX-1vQyQ8MYxGYrR0Cuo40EGW3o-OEz5RoHB24_dMWR1c5PlhU8DhinBJ1_PQ2aeBDs5VujTQTl0-KivusL/pub?start=false&loop=false&delayms=60000#slide=id.p)
 [Tableau Dashboard for this project](https://public.tableau.com/app/profile/stefan.williams/viz/TemperatureAnomaliesAcrossNorthCarolina1964-2013/Dashboard2)
 
 A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing GitHub, Slack, and Zoom for communication and cooperation. 
