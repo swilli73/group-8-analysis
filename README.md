@@ -1,13 +1,14 @@
 # group-8-analysis
 ## A final group project for the UNC Chapel Hill Data Analytics and Visualization Boot Camp 
 
-Python/Pandas/SQLAlchemy, Jupyter Notebook, SQL, Postgres/pgAdmin4, [QuickDBD](https://www.quickdatabasediagrams.com), Tableau Public
+Python/Pandas/SQLAlchemy, Jupyter Notebook, SQL, Postgres/pgAdmin4, [QuickDBD](https://www.quickdatabasediagrams.com), Tableau Public, AWS, GeoPandas, scikit-learn, Matplotlib, Numpy
 
 [Data sourced from a database of U.S. temperature outliers from 1943-2013 collected from NOAA](https://data.world/carlvlewis/u-s-weather-outliers-1964)
 
 [Resource referenced for execution of the c.execute function](https://mungingdata.com/sqlite/create-database-load-csv-python/)
 
 [Link to Google Slides presentation for this project](https://docs.google.com/presentation/d/e/2PACX-1vQyQ8MYxGYrR0Cuo40EGW3o-OEz5RoHB24_dMWR1c5PlhU8DhinBJ1_PQ2aeBDs5VujTQTl0-KivusL/pub?start=false&loop=false&delayms=60000#slide=id.p)
+
 [Tableau Dashboard for this project](https://public.tableau.com/app/profile/stefan.williams/viz/TemperatureAnomaliesAcrossNorthCarolina1964-2013/Dashboard2)
 
 A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing GitHub, Slack, and Zoom for communication and cooperation. 
@@ -113,15 +114,36 @@ A collaboration between Stefan Williams, Eric Cregger, and Lucy Harris utilizing
 
 ## Segment 3: Put It All Together
 
-#### Now that we have a working database that connects to a machine learning model, as well as a provisional dashboard to present our findings, there are just a few more steps left in this project. For our final phase, we performed a join of the new DataFrame created by the model with the original DataFrame that was loaded in. This is used to create a few 2D scatter plots to compare the weather variables to the typing of the original data, as well as the classifications the model created to view our results. After that, our project dashboard was completed and published.
+#### Now that we have a working database that connects to a machine learning model, as well as a provisional dashboard to present our findings, there are just a few more steps left in this project. 
+
+#### For our final phase, we performed a join of the new DataFrame created by the model with the original DataFrame that was loaded in. This is used to create a few 2D scatter plots to compare the weather variables to the typing of the original data, as well as the classifications the model created to view our results. After that, our project dashboard was completed and published.
 
 
-![s31](
-![s32](
-![s33](
-![s34](
-![s35](
-![s36](
-![s37](
-![s38](
-![s39](
+![s31](https://i.gyazo.com/1e90d990186745ec6a769305a3edc12a.png)
+
+> The original "df" and machine learning generated "df_pca" DataFrames were joined together.
+
+![s32](https://i.gyazo.com/980281904480df501c6fa34c129c2066.png)
+![s33](https://i.gyazo.com/f863dcc79ecca1c896bd31ee140424f1.png)
+
+> The relationship between "degrees_from_mean" and "max_temp" was plotted for the original typing, as well as the machine-generated classification.
+
+![s34](https://i.gyazo.com/5e70efaaa9a46800b264d4867054eae1.png)
+![s35](https://i.gyazo.com/4c7e4f707d7de7cabbd19357ca883d9d.png)
+
+> The relationship between "degrees_from_mean" and "min_temp" was plotted for the original typing, as well as the machine-generated classification.
+
+![s36](https://i.gyazo.com/d27cbfd236100317fa576b41bafd3c70.png)
+![s37](https://i.gyazo.com/18936f4dec230550fc184a634efd97f7.png)
+
+> The relationship between "max_temp" and "min_temp" was plotted for the original typing, as well as the machine-generated classification.
+
+#### The original question of this project was to ask whether or not a machine learning model could classify these temperature anomalies, as well as how those factors may affect a machine's decision in assigning a classification. It didn't look as promising with the 3D scatter plot, but it was a big surprise to see how similar the 2D scatter plots were to each other, down to even classifying the outliers nearly the same way.
+
+#### The original "type" column remains a bit of a mystery, then, as a machine learning model seems to get equally as confused as to what classifies as "Weak Hot", "Weak Cold", "Strong Hot", or "Strong Cold". Further analysis would clean up the dataset a bit more, removing some of the very "extreme" variables (such as uninhabitable max and min temps), and digging into what the "degrees_from_mean" column really means, as it was a calculation performed on the original dataset, and not direct NOAA data. 
+
+#### Future statistical analysis could include the percentage of types by station, the lowest/highest min/max temp for a specific type, which stations/areas reported the hottest/coldest temperature anomalies, and so on.
+
+![s38](https://i.gyazo.com/50cf2fc5dd434b822e1a2037acb3fb44.png)
+
+#### A final dashboard providing an overall summary of our project with data analysis, as well as the results of the machine learning model was created using Tableau Public. It features an interactive map that shows the record count and average degrees from mean for the temperature anomalies across the North Carolina stations. It can be filtered by year, station, and the tooltip includes a visualization of the amount of "types" that station reported to show the ratio and amount.
